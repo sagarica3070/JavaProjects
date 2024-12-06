@@ -1,0 +1,20 @@
+spring.application.name=api-gateway
+server.port=9090
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+logging.level.root=INFO
+
+#Product-service route
+#in routes put the name of the servervice mentioned in their application properties
+spring.cloud.gateway.routes[0]= inventory-service
+spring.cloud.gateway.routes[0].uri=lb://inventory-service
+spring.cloud.gateway.routes[0].predicate[0]=Path=/api/inventory
+
+spring.cloud.gateway.routes[1]= order-service
+spring.cloud.gateway.routes[1].uri=lb://order-service
+spring.cloud.gateway.routes[1].predicate[0]=Path=/api/order
+
+spring.cloud.gateway.routes[2]= product-service
+spring.cloud.gateway.routes[2].uri=lb://product-service
+spring.cloud.gateway.routes[2].predicate[0]=Path=/api/product
+

@@ -1,0 +1,31 @@
+package com.example.order_service.dto;
+
+import java.util.List;
+
+public class OrderRequest {
+	
+	 private List<OrderLineItemsDto> OrderLineItemsDto;
+
+	public List<OrderLineItemsDto> getOrderLineItemsDto() {
+		return OrderLineItemsDto;
+	}
+
+	public void setOrderLineItemsDto(List<OrderLineItemsDto> orderLineItemsDto) {
+		OrderLineItemsDto = orderLineItemsDto;
+	}
+
+	public OrderRequest(List<com.example.order_service.dto.OrderLineItemsDto> orderLineItemsDto) {
+		super();
+		OrderLineItemsDto = orderLineItemsDto;
+	}
+
+	public OrderRequest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	 
+	 
+	 
+	 
+
+}
